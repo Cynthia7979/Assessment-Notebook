@@ -14,6 +14,7 @@
 		D54A1D1B26B1C443003A1226 /* Assessment_NotebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A1D1A26B1C443003A1226 /* Assessment_NotebookTests.swift */; };
 		D54A1D2626B1C443003A1226 /* Assessment_NotebookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A1D2526B1C443003A1226 /* Assessment_NotebookUITests.swift */; };
 		D54A1D3426B1CA3C003A1226 /* AssignmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A1D3326B1CA3C003A1226 /* AssignmentList.swift */; };
+		D54A1D3626B1CED3003A1226 /* AddAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A1D3526B1CED3003A1226 /* AddAssignmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D54A1D2526B1C443003A1226 /* Assessment_NotebookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assessment_NotebookUITests.swift; sourceTree = "<group>"; };
 		D54A1D2726B1C443003A1226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D54A1D3326B1CA3C003A1226 /* AssignmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentList.swift; sourceTree = "<group>"; };
+		D54A1D3526B1CED3003A1226 /* AddAssignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				D54A1D0826B1C441003A1226 /* Assessment_NotebookApp.swift */,
 				D54A1D0A26B1C441003A1226 /* ContentView.swift */,
+				D54A1D3526B1CED3003A1226 /* AddAssignmentView.swift */,
 				D54A1D3326B1CA3C003A1226 /* AssignmentList.swift */,
 				D54A1D0C26B1C443003A1226 /* Assets.xcassets */,
 				D54A1D1126B1C443003A1226 /* Info.plist */,
@@ -265,6 +268,7 @@
 				D54A1D3426B1CA3C003A1226 /* AssignmentList.swift in Sources */,
 				D54A1D0B26B1C441003A1226 /* ContentView.swift in Sources */,
 				D54A1D0926B1C441003A1226 /* Assessment_NotebookApp.swift in Sources */,
+				D54A1D3626B1CED3003A1226 /* AddAssignmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

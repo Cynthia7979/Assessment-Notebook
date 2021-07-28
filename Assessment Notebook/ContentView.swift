@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var assignmentList = AssignmentList()
+    @State private var showAddAssignmentView = false
+    
     var body: some View {
         NavigationView {
             List {
@@ -17,11 +19,11 @@ struct ContentView: View {
                         VStack {
                             Text(assignment.course)
                                 .font(.headline)
-
+                            
                             Text(assignment.description)
                         }
                         Spacer()
-
+                        
                         Text(assignment.date, style: .date)
                     }
                 }
@@ -32,6 +34,14 @@ struct ContentView: View {
                     assignmentList.assignments.remove(atOffsets: indexSet)
                 })
                 .navigationBarItems(leading: EditButton())
+                .navigationBarTitle("Assignment List")
+                .sheet(isPresented: $showAddAssignmentView, content: {
+                    AddAssignmentView(assignmentList: assignmentList)
+                })
+                .navigationBarItems(leading: EditButton(),
+                                    trailing: Button(action: { showAddAssignmentView = true }) {
+                                        Image(systemName: "plus")
+                                    })
             }
         }
     }
