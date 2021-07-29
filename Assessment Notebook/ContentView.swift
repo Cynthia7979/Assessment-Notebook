@@ -34,14 +34,19 @@ struct ContentView: View {
                     assignmentList.assignments.remove(atOffsets: indexSet)
                 })
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showAddAssignmentView = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
             .navigationBarTitle("Assignment List")
-            .navigationBarItems(
-                leading: EditButton(),
-                trailing: Button(action: {
-                    showAddAssignmentView = true
-                }) {
-                    Image(systemName: "plus")
-                })
             .sheet(isPresented: $showAddAssignmentView, content: {
                 AddAssignmentView(assignmentList: assignmentList)
             })
