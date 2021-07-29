@@ -13,26 +13,40 @@ struct AddAssignmentView: View {
     @State private var course = String()
     @State private var date = Date()
     @Environment(\.presentationMode) var presentationMode
-    static let courses = ["English", "Math", "Science", "Social Science", ]
+    
+    static let courseChoices = ["English", "Math", "Science", "Social Science", ]
+    static let courseIcons = ["books.vertical", "plusminus.circle", "eyeglasses", "figure.stand.line.dotted.figure.stand"]
+    
     var body: some View {
         NavigationView {
             Form {
                 Picker("Course", selection: $course) {
-                    ForEach(Self.courses, id: \.self) { courseChoice in
-                        Text(courseChoice)
+                    ForEach(0..<Self.courseChoices.count, id: \.self) { i in
+                        HStack {
+                            Image(systemName: Self.courseIcons[i])
+                                .frame(width:50)
+                            Text(Self.courseChoices[i])
+                        }
+                        .tag(Self.courseChoices[i])
                     }
                 }
+                
                 TextField("Description", text: $description)
+                
                 DatePicker("Date", selection: $date, displayedComponents: .date)
             }
-            .navigationBarItems(trailing: Button("Save") {
-                if course.count > 0 && description != "" && date != Date() {
-                    let assignment = AssignmentItem(description: description, course: course, date: date)
-                    assignmentList.assignments.append(assignment)
-                    presentationMode.wrappedValue.dismiss()
-                }
-            })
             .navigationBarTitle("Add New Assignment", displayMode: .inline)
+            .toolbar() {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                        print(course)
+                        if (course.count > 0) && (description != "") && (date != Date()) {
+                            let assignment = AssignmentItem(description: description, course: course, date: date)
+                            assignmentList.assignments.append(assignment)
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }
+                }
+            }
         }
     }
 }

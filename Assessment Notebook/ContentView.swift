@@ -19,7 +19,8 @@ struct ContentView: View {
                         VStack {
                             Text(assignment.course)
                                 .font(.headline)
-                                .padding(.leading, -65)
+//                                .padding(.leading,
+//                                         (assignmentList.assignments[0] == assignment) ? -80 : 0)
                             
                             Text(assignment.description)
                         }

@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct AssignmentItem: Identifiable, Codable {
+struct AssignmentItem: Identifiable, Codable, Equatable {
     var id = UUID()
     var description = String()
     var course = String()
