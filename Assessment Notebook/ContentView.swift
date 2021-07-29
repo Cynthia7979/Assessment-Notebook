@@ -19,6 +19,7 @@ struct ContentView: View {
                         VStack {
                             Text(assignment.course)
                                 .font(.headline)
+                                .padding(.leading, -65)
                             
                             Text(assignment.description)
                         }
@@ -35,15 +36,9 @@ struct ContentView: View {
                 })
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    EditButton()
-                }
+                ToolbarItem(placement: .navigationBarLeading) { EditButton() }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        showAddAssignmentView = true
-                    }) {
-                        Image(systemName: "plus")
-                    }
+                    Button(action: { showAddAssignmentView = true }) { Image(systemName: "plus") }
                 }
             }
             .navigationBarTitle("Assignment List")
@@ -58,11 +53,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-struct AssignmentItem: Identifiable {
-    var id = UUID()
-    var description = String()
-    var course = String()
-    var date = Date()
 }

@@ -13,7 +13,7 @@
 		D54A1D1026B1C443003A1226 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54A1D0F26B1C443003A1226 /* Preview Assets.xcassets */; };
 		D54A1D1B26B1C443003A1226 /* Assessment_NotebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A1D1A26B1C443003A1226 /* Assessment_NotebookTests.swift */; };
 		D54A1D2626B1C443003A1226 /* Assessment_NotebookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A1D2526B1C443003A1226 /* Assessment_NotebookUITests.swift */; };
-		D54A1D3426B1CA3C003A1226 /* AssignmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A1D3326B1CA3C003A1226 /* AssignmentList.swift */; };
+		D54A1D3426B1CA3C003A1226 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A1D3326B1CA3C003A1226 /* Components.swift */; };
 		D54A1D3626B1CED3003A1226 /* AddAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A1D3526B1CED3003A1226 /* AddAssignmentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +47,7 @@
 		D54A1D2126B1C443003A1226 /* Assessment NotebookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Assessment NotebookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54A1D2526B1C443003A1226 /* Assessment_NotebookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assessment_NotebookUITests.swift; sourceTree = "<group>"; };
 		D54A1D2726B1C443003A1226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D54A1D3326B1CA3C003A1226 /* AssignmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentList.swift; sourceTree = "<group>"; };
+		D54A1D3326B1CA3C003A1226 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		D54A1D3526B1CED3003A1226 /* AddAssignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +102,7 @@
 				D54A1D0826B1C441003A1226 /* Assessment_NotebookApp.swift */,
 				D54A1D0A26B1C441003A1226 /* ContentView.swift */,
 				D54A1D3526B1CED3003A1226 /* AddAssignmentView.swift */,
-				D54A1D3326B1CA3C003A1226 /* AssignmentList.swift */,
+				D54A1D3326B1CA3C003A1226 /* Components.swift */,
 				D54A1D0C26B1C443003A1226 /* Assets.xcassets */,
 				D54A1D1126B1C443003A1226 /* Info.plist */,
 				D54A1D0E26B1C443003A1226 /* Preview Content */,
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D54A1D3426B1CA3C003A1226 /* AssignmentList.swift in Sources */,
+				D54A1D3426B1CA3C003A1226 /* Components.swift in Sources */,
 				D54A1D0B26B1C441003A1226 /* ContentView.swift in Sources */,
 				D54A1D0926B1C441003A1226 /* Assessment_NotebookApp.swift in Sources */,
 				D54A1D3626B1CED3003A1226 /* AddAssignmentView.swift in Sources */,
