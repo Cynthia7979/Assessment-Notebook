@@ -13,33 +13,50 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(assignmentList.assignments) { assignment in
+            Group {
+                if assignmentList.assignments.count == 0 {
                     HStack {
-                        VStack {
-                            Text(assignment.course)
-                                .font(.headline)
-//                                .padding(.leading,
-//                                         (assignmentList.assignments[0] == assignment) ? -80 : 0)
-                            
-                            Text(assignment.description)
-                        }
-                        Spacer()
+                        Text("Add Your First Assignment by Clicking")
                         
-                        Text(assignment.date, style: .date)
+                        Image(systemName: "plus")
+                            .foregroundColor(.blue)
+                        
+                        Text("!")
                     }
-                }
-                .onMove(perform: { indices, newIndex in
-                    assignmentList.assignments.move(fromOffsets: indices, toOffset: newIndex)
-                })
-                .onDelete(perform: { indexSet in
-                    assignmentList.assignments.remove(atOffsets: indexSet)
-                })
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) { EditButton() }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { showAddAssignmentView = true }) { Image(systemName: "plus") }
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(action: { showAddAssignmentView = true }) { Image(systemName: "plus") }
+                        }
+                    }
+                } else {
+                    List {
+                        ForEach(assignmentList.assignments) { assignment in
+                            HStack {
+                                VStack {
+                                    Text(assignment.course)
+                                        .font(.headline)
+                                    
+                                    Text(assignment.description)
+                                }
+                                
+                                Spacer()
+                                
+                                Text(assignment.date, style: .date)
+                            }
+                        }
+                        .onMove(perform: { indices, newIndex in
+                            assignmentList.assignments.move(fromOffsets: indices, toOffset: newIndex)
+                        })
+                        .onDelete(perform: { indexSet in
+                            assignmentList.assignments.remove(atOffsets: indexSet)
+                        })
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) { EditButton() }
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(action: { showAddAssignmentView = true }) { Image(systemName: "plus") }
+                        }
+                    }
                 }
             }
             .navigationBarTitle("Assignment List")
@@ -49,9 +66,9 @@ struct ContentView: View {
         }
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}

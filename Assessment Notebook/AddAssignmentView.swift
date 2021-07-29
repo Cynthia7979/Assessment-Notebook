@@ -25,6 +25,7 @@ struct AddAssignmentView: View {
                         HStack {
                             Image(systemName: Self.courseIcons[i])
                                 .frame(width:50)
+                            
                             Text(Self.courseChoices[i])
                         }
                         .tag(Self.courseChoices[i])
@@ -38,12 +39,17 @@ struct AddAssignmentView: View {
             .navigationBarTitle("Add New Assignment", displayMode: .inline)
             .toolbar() {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                        print(course)
+                    Button("Save") {
                         if (course.count > 0) && (description != "") && (date != Date()) {
                             let assignment = AssignmentItem(description: description, course: course, date: date)
                             assignmentList.assignments.append(assignment)
                             presentationMode.wrappedValue.dismiss()
                         }
+                    }
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        presentationMode.wrappedValue.dismiss()
                     }
                 }
             }
